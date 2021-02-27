@@ -1,17 +1,17 @@
 from textdistance import levenshtein
-from .quran_intents import quran_intents
 
 
 class IntentFinder:
-    def __init__(self, tokens):
+    def __init__(self, tokens, intent_list):
         self.tokens = tokens
+        self.intent_list = intent_list
 
     def intents(self):
         # Founded intent in query
         query_intents = []
 
         # Search intent from tokens
-        for intent in quran_intents:
+        for intent in self.intent_list:
             for index, token in enumerate(self.tokens):
                 if token in intent["words"]:
                     query_intent = intent.copy()
@@ -40,7 +40,7 @@ class IntentFinder:
         # is less than 3
         for token in left_tokens:
             intents = []
-            for intent in quran_intents:
+            for intent in self.intent_list:
                 for word in intent["words"]:
                     d = levenshtein.distance(token["word"], word)
                     if d < 3:
