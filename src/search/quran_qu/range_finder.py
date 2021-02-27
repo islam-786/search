@@ -14,43 +14,46 @@ class RangeFinder:
         # check "form" word exists in token
         from_word_index = None
         try:
-            from_word_index = self.tokens.index("form")
+            from_word_index = self.tokens.index("from")
         except ValueError:
             try:
                 from_word_index = self.tokens.index("start")
             except ValueError:
                 pass
 
-        if from_word_index:
-            range_format = {}
+        try:
+            if from_word_index:
+                range_format = {}
 
-            # Check next word should be number
-            next_token = self.tokens[from_word_index+1]
-            if next_token.isnumeric() or next_token in numeric_words:
-                try:
-                    range_format["from"] = int(next_token)
-                except ValueError:
-                    range_format["from"] = next(
-                        a["number"] for a in alpha_numbers if a["alpha"] == next_token)
+                # Check next word should be number
+                next_token = self.tokens[from_word_index+1]
+                if next_token.isnumeric() or next_token in numeric_words:
+                    try:
+                        range_format["from"] = int(next_token)
+                    except ValueError:
+                        range_format["from"] = next(
+                            a["number"] for a in alpha_numbers if a["alpha"] == next_token)
 
-            # Check next word should be "to" or "end"
-            next_index = from_word_index + 2
-            next_token = self.tokens[from_word_index+2]
-            if next_token == "to" or next_token == "end":
-                next_index += 1
+                # Check next word should be "to" or "end"
+                next_index = from_word_index + 2
+                next_token = self.tokens[from_word_index+2]
+                if next_token == "to" or next_token == "end":
+                    next_index += 1
 
-            # Check if next word is "end"
-            next_token = self.tokens[next_index]
-            if next_token == "end":
-                next_token += 1
+                # Check if next word is "end"
+                next_token = self.tokens[next_index]
+                if next_token == "end":
+                    next_index += 1
 
-            # Next world should be number
-            next_token = self.tokens[next_index]
-            if next_token.isnumeric() or next_token in numeric_words:
-                try:
-                    range_format["to"] = int(next_token)
-                except ValueError:
-                    range_format["to"] = next(
-                        a["number"] for a in alpha_numbers if a["alpha"] == next_token)
+                # Next world should be number
+                next_token = self.tokens[next_index]
+                if next_token.isnumeric() or next_token in numeric_words:
+                    try:
+                        range_format["to"] = int(next_token)
+                    except ValueError:
+                        range_format["to"] = next(
+                            a["number"] for a in alpha_numbers if a["alpha"] == next_token)
+        except:
+            pass
 
         return range_format

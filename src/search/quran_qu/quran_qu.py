@@ -48,6 +48,14 @@ class QuranQU:
         range_finder = RangeFinder(tokens)
         query_range = range_finder.query_range()
 
+        # if Query Range found than remove the ayah intent from filters
+        if query_range:
+            filters_intent = [
+                i for i in filters_intent if i["name"] != "ayah"]
+
+            # Add query range into formated query
+            formated_query["range"] = query_range
+
         # Find filters
         filters = filter_finder.filters(filters_intent)
 
