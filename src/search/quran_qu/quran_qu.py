@@ -3,6 +3,7 @@ from .tokenizer import Tokenizer
 from .intent_finder import IntentFinder
 from .number_finder import NumberFinder
 from .filter_finder import FilterFinder
+from .limit_finder import LimitFinder
 from .collection_finder import CollectionFinder
 
 
@@ -20,10 +21,21 @@ class QuranQU:
         number_finder = NumberFinder(tokens)
         numbers = number_finder.numbers()
 
-        # Find filter intents and filters
+        # Find filter intents
         filter_finder = FilterFinder(tokens, numbers, intents)
         filters_intent = filter_finder.intents()
-        filters = filter_finder.filters()
+
+        # Find limit
+        limit_finder = LimitFinder(tokens, filters_intent)
+        limit_intent = limit_finder.intent()
+
+        # if limit intent found than remove this intent from filters intent
+        if limit_intent:
+            filters_intent = [
+                i for i in filters_intent if i["index"] != limit_intent["index"]]
+
+        # Find filters
+        filters = filter_finder.filters(filters_intent)
 
         # Find query collection
         collection_finder = CollectionFinder(tokens, intents, filters_intent)
@@ -31,8 +43,17 @@ class QuranQU:
 
         formated_query = {
             "collection": collection,
-            "filters": filters
+            "query": {
+                "filters": filters
+            }
         }
+
+        if limit_intent:
+            formated_query["query"]["limit"] = {
+                "name": limit_intent["name"],
+                "number": limit_intent["number"],
+                "direction": limit_intent["direction"]
+            }
 
         if debug:
             formated_query["_debug"] = {
@@ -40,6 +61,7 @@ class QuranQU:
                 "intents": intents,
                 "numbers": numbers,
                 "filters_intent": filters_intent,
+                "limit": limit_intent
             }
 
         return formated_query

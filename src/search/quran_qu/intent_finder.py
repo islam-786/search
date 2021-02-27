@@ -1,3 +1,4 @@
+from textdistance import levenshtein
 from .quran_intents import quran_intents
 
 
@@ -17,5 +18,39 @@ class IntentFinder:
                     query_intent["value"] = token
                     query_intent["index"] = index
                     query_intents.append(query_intent)
+
+        # Those tokens which intents are not found
+        left_tokens = []
+        for token in self.tokens:
+            found = False
+            for intent in query_intents:
+                if token == intent["value"]:
+                    found = True
+                    break
+
+            if not found:
+                left_tokens.append(token)
+
+        # If there are some tokens left then
+        # find those intents which are levenshtein distance
+        # is less than 3
+        for index, token in enumerate(left_tokens):
+            intents = []
+            for intent in quran_intents:
+                for word in intent["words"]:
+                    d = levenshtein.distance(token, word)
+                    if d < 3:
+                        i = {}
+                        i["intent"] = intent.copy()
+                        i["distance"] = d
+                        intents.append(i)
+                        break
+
+            if intents:
+                min_distance_intent = min(intents, key=lambda i: i["distance"])
+                i = min_distance_intent["intent"]
+                i["value"] = token
+                i["index"] = index
+                query_intents.append(i)
 
         return query_intents

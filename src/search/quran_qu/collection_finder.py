@@ -38,6 +38,7 @@ class CollectionFinder:
             # if token is only one e.g (2:1) or (2-1)
             # then consider Quran as a collection
             if len(self.tokens) == 1:
-                query_collection = "quran"
+                if ":" in self.tokens[0] or "-" in self.tokens[0]:
+                    query_collection = "quran"
 
         return query_collection

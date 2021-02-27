@@ -45,12 +45,10 @@ class FilterFinder:
         self.filters_intent = filters_intent
         return filters_intent
 
-    def filters(self):
-        if not self.filters_intent:
-            self.intents()
+    def filters(self, filters_intent):
 
         filters = [{"name": filter_intent["name"], "number": filter_intent["number"]}
-                   for filter_intent in self.filters_intent]
+                   for filter_intent in filters_intent]
 
         # If filters None then check if any token contain (:) or (-)
         if not filters:
