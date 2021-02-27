@@ -7,7 +7,7 @@ from .collection_finder import CollectionFinder
 
 
 class QuranQU:
-    def analyze(self, query):
+    def analyze(self, query, debug):
         # Tokenize query
         tokenizer = Tokenizer(query)
         tokens = tokenizer.tokens()
@@ -21,7 +21,7 @@ class QuranQU:
         numbers = number_finder.numbers()
 
         # Find filter intents and filters
-        filter_finder = FilterFinder(numbers, intents)
+        filter_finder = FilterFinder(tokens, numbers, intents)
         filters_intent = filter_finder.intents()
         filters = filter_finder.filters()
 
@@ -33,5 +33,14 @@ class QuranQU:
             "collection": collection,
             "filters": filters
         }
+
+        if debug:
+            formated_query["debug"] = {
+                "tokens": tokens,
+                "intents": intents,
+                "numbers": numbers,
+                "filters_intent": filters_intent,
+                "filters": filters
+            }
 
         return formated_query

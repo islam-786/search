@@ -1,5 +1,6 @@
 class FilterFinder:
-    def __init__(self, numbers, query_intents):
+    def __init__(self, tokens, numbers, query_intents):
+        self.tokens = tokens
         self.numbers = numbers
         self.query_intents = query_intents
 
@@ -25,4 +26,29 @@ class FilterFinder:
 
         filters = [{"name": filter_intent["name"], "number": filter_intent["number"]}
                    for filter_intent in self.filters_intent]
+
+        # If filters None then check if any token contain (:) or (-)
+        if not filters:
+            for token in self.tokens:
+                seperator = None
+
+                if ":" in token:
+                    seperator = ":"
+                if "-" in token:
+                    seperator = "-"
+
+                if seperator:
+                    parts = token.split(seperator)
+                    # Consider first part is surah and second is ayah
+                    filters = [
+                        {
+                            "name": "surah",
+                            "number": parts[0]
+                        },
+                        {
+                            "name": "ayah",
+                            "number": parts[1]
+                        }
+                    ]
+
         return filters
