@@ -1,5 +1,6 @@
 class CollectionFinder:
-    def __init__(self, intents, filters_intent):
+    def __init__(self, tokens, intents, filters_intent):
+        self.tokens = tokens
         self.intents = intents
         self.filters_intent = filters_intent
 
@@ -32,8 +33,11 @@ class CollectionFinder:
             except ValueError:
                 query_collection = None
 
-        return query_collection
-
         # Check if still collection is None
-        # if formated_query["collection"] is None:
-        #     print(tokens)
+        if query_collection is None:
+            # if token is only one e.g (2:1) or (2-1)
+            # then consider Quran as a collection
+            if len(self.tokens) == 1:
+                query_collection = "quran"
+
+        return query_collection

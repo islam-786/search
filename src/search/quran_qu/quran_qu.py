@@ -26,7 +26,7 @@ class QuranQU:
         filters = filter_finder.filters()
 
         # Find query collection
-        collection_finder = CollectionFinder(intents, filters_intent)
+        collection_finder = CollectionFinder(tokens, intents, filters_intent)
         collection = collection_finder.collection()
 
         formated_query = {
@@ -40,7 +40,6 @@ class QuranQU:
                 "intents": intents,
                 "numbers": numbers,
                 "filters_intent": filters_intent,
-                "filters": filters
             }
 
         return formated_query
