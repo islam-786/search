@@ -1,4 +1,4 @@
-from .alpha_numbers import alpha_numbers
+from .alpha_numbers import alpha_numbers, numeric_words
 
 
 class NumberFinder:
@@ -28,9 +28,8 @@ class NumberFinder:
                         # if it is a number it might be a limit
                         # e.g surah 3 first 5 ayahs
                         # next_token = self.tokens[index+1]
-                        # alpha_words = [a["alpha"] for a in alpha_numbers]
 
-                        # if not next_token.isnumeric() and next_token not in alpha_words:
+                        # if not next_token.isnumeric() and next_token not in numeric_words:
                         #     query_numbers.append({
                         #         "index": index,
                         #         "number": alpha_number["number"]

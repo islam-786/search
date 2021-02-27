@@ -80,3 +80,5 @@ alpha_numbers = [
         "number": 10
     }
 ]
+
+numeric_words = [a["alpha"] for a in alpha_numbers]
