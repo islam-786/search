@@ -23,16 +23,18 @@ class QuranQU:
 
         # Find filter intents
         filter_finder = FilterFinder(tokens, numbers, intents)
-        filters_intent = filter_finder.intents()
+        filters_intent_raw = filter_finder.intents()
 
         # Find limit
-        limit_finder = LimitFinder(tokens, filters_intent)
+        limit_finder = LimitFinder(tokens, filters_intent_raw)
         limit_intent = limit_finder.intent()
 
         # if limit intent found than remove this intent from filters intent
         if limit_intent:
             filters_intent = [
-                i for i in filters_intent if i["index"] != limit_intent["index"]]
+                i for i in filters_intent_raw if i["index"] != limit_intent["index"]]
+        else:
+            filters_intent = filters_intent_raw
 
         # Find filters
         filters = filter_finder.filters(filters_intent)
@@ -60,6 +62,7 @@ class QuranQU:
                 "tokens": tokens,
                 "intents": intents,
                 "numbers": numbers,
+                "filters_intent_raw": filters_intent_raw,
                 "filters_intent": filters_intent,
                 "limit": limit_intent
             }

@@ -1,7 +1,11 @@
+from .alpha_numbers import alpha_numbers
+
+
 class LimitFinder:
     def __init__(self, tokens, filters_intent):
         self.tokens = tokens
         self.filters_intent = filters_intent
+        self.alpha_numerics = [a["alpha"] for a in alpha_numbers]
 
     def intent(self):
         direction = "start"
@@ -9,14 +13,20 @@ class LimitFinder:
 
         # if there is "first" word before or after number
         for index, token in enumerate(self.tokens):
-            if token == "first" and self.tokens[index + 1].isnumeric():
+            if (token == "first" and
+                        (self.tokens[index + 1].isnumeric() or
+                         self.tokens[index + 1] in self.alpha_numerics)
+                    ):
                 # This is the limit e.g first 5 ayahs
                 limit_index = index + 1
-                limit_direction = "start"
-            elif token == "last" and self.tokens[index + 1].isnumeric():
+                direction = "start"
+            elif (token == "last" and
+                    (self.tokens[index + 1].isnumeric() or
+                     self.tokens[index + 1] in self.alpha_numerics)
+                  ):
                 # This is the limit e.g last 5 ayahs
                 limit_index = index + 1
-                limit_direction = "end"
+                direction = "end"
 
         # if any limit index found
         if limit_index:

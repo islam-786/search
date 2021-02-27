@@ -21,7 +21,7 @@ class IntentFinder:
 
         # Those tokens which intents are not found
         left_tokens = []
-        for token in self.tokens:
+        for index, token in enumerate(self.tokens):
             found = False
             for intent in query_intents:
                 if token == intent["value"]:
@@ -29,16 +29,20 @@ class IntentFinder:
                     break
 
             if not found:
-                left_tokens.append(token)
+                t = {
+                    "word": token,
+                    "index": index
+                }
+                left_tokens.append(t)
 
         # If there are some tokens left then
         # find those intents which are levenshtein distance
         # is less than 3
-        for index, token in enumerate(left_tokens):
+        for token in left_tokens:
             intents = []
             for intent in quran_intents:
                 for word in intent["words"]:
-                    d = levenshtein.distance(token, word)
+                    d = levenshtein.distance(token["word"], word)
                     if d < 3:
                         i = {}
                         i["intent"] = intent.copy()
@@ -49,8 +53,8 @@ class IntentFinder:
             if intents:
                 min_distance_intent = min(intents, key=lambda i: i["distance"])
                 i = min_distance_intent["intent"]
-                i["value"] = token
-                i["index"] = index
+                i["value"] = token["word"]
+                i["index"] = token["index"]
                 query_intents.append(i)
 
         return query_intents
