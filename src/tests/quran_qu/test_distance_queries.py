@@ -38,7 +38,7 @@ def test_query4():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["query"]["filters"][0]["name"] == "surah"
-    assert result["query"]["filters"][0]["number"] == 2
-    assert result["query"]["filters"][1]["name"] == "ayah"
-    assert result["query"]["filters"][1]["number"] == 1
+    assert result["filters"][0]["name"] == "surah"
+    assert result["filters"][0]["number"] == 2
+    assert result["filters"][1]["name"] == "ayah"
+    assert result["filters"][1]["number"] == 1

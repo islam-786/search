@@ -45,13 +45,11 @@ class QuranQU:
 
         formated_query = {
             "collection": collection,
-            "query": {
-                "filters": filters
-            }
+            "filters": filters
         }
 
         if limit_intent:
-            formated_query["query"]["limit"] = {
+            formated_query["limit"] = {
                 "name": limit_intent["name"],
                 "number": limit_intent["number"],
                 "direction": limit_intent["direction"]
