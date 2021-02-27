@@ -55,6 +55,8 @@ def test_user_query5():
     quran_qu = QuranQU()
     result = quran_qu.analyze(user_query)
 
+    print(result)
+
     assert result["collection"] == "quran"
     assert result["filters"][0]["name"] == "ayah"
     assert result["filters"][0]["number"] == 1
@@ -183,12 +185,24 @@ def test_user_query15():
 
 
 def test_user_query16():
+    user_query = "1 ayah of 2 surah from quran"
+    quran_qu = QuranQU()
+    result = quran_qu.analyze(user_query)
+
+    assert result["collection"] == "quran"
+    assert result["filters"][0]["name"] == "ayah"
+    assert result["filters"][0]["number"] == 1
+    assert result["filters"][1]["name"] == "surah"
+    assert result["filters"][1]["number"] == 2
+
+
+def test_user_query17():
     user_query = "first ayah of second surah from quran"
     quran_qu = QuranQU()
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["filters"][0]["name"] == "surah"
-    assert result["filters"][0]["number"] == 2
-    assert result["filters"][1]["name"] == "ayah"
-    assert result["filters"][1]["number"] == 1
+    assert result["filters"][0]["name"] == "ayah"
+    assert result["filters"][0]["number"] == 1
+    assert result["filters"][1]["name"] == "surah"
+    assert result["filters"][1]["number"] == 2
