@@ -17,6 +17,10 @@ from search.quran_qu import QuranQU
 # user_query = "2-1"
 # user_query = "1 ayah of 2 surah from quran"
 # user_query = "first ayah of second surah from quran"
+# user_query = "surah number 2 ayat number 1"
+# user_query = "surah num 2 ayah 1"
+# user_query = "surah no 2 ayah 1"
+# user_query = "surah no. 2 ayah no.1"
 
 
 def test_query1():
@@ -223,3 +227,51 @@ def test_query17():
     assert result["filters"][0]["number"] == 1
     assert result["filters"][1]["name"] == "surah"
     assert result["filters"][1]["number"] == 2
+
+
+def test_query18():
+    user_query = "surah number 2 ayat number 1"
+    quran_qu = QuranQU()
+    result = quran_qu.analyze(user_query)
+
+    assert result["collection"] == "quran"
+    assert result["filters"][0]["name"] == "surah"
+    assert result["filters"][0]["number"] == 2
+    assert result["filters"][1]["name"] == "ayah"
+    assert result["filters"][1]["number"] == 1
+
+
+def test_query19():
+    user_query = "surah num 2 ayah 1"
+    quran_qu = QuranQU()
+    result = quran_qu.analyze(user_query)
+
+    assert result["collection"] == "quran"
+    assert result["filters"][0]["name"] == "surah"
+    assert result["filters"][0]["number"] == 2
+    assert result["filters"][1]["name"] == "ayah"
+    assert result["filters"][1]["number"] == 1
+
+
+def test_query20():
+    user_query = "surah no 2 ayah 1"
+    quran_qu = QuranQU()
+    result = quran_qu.analyze(user_query)
+
+    assert result["collection"] == "quran"
+    assert result["filters"][0]["name"] == "surah"
+    assert result["filters"][0]["number"] == 2
+    assert result["filters"][1]["name"] == "ayah"
+    assert result["filters"][1]["number"] == 1
+
+
+def test_query21():
+    user_query = "surah no. 2 ayah no.1"
+    quran_qu = QuranQU()
+    result = quran_qu.analyze(user_query)
+
+    assert result["collection"] == "quran"
+    assert result["filters"][0]["name"] == "surah"
+    assert result["filters"][0]["number"] == 2
+    assert result["filters"][1]["name"] == "ayah"
+    assert result["filters"][1]["number"] == 1

@@ -4,8 +4,6 @@ class Tokenizer:
 
     def tokens(self):
         query = self.query
-        # Replace # symbol with space
-        query = query.replace("#", " ")
 
         # Replace extra white spaces from query
         query = " ".join(query.split())
