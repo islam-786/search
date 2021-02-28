@@ -21,6 +21,7 @@ from search.quran_qu import QuranQU
 # user_query = "surah num 2 ayah 1"
 # user_query = "surah no 2 ayah 1"
 # user_query = "surah no. 2 ayah no.1"
+# user_query = "quran surahs"
 
 
 def test_query1():
@@ -275,3 +276,11 @@ def test_query21():
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
     assert result["filters"][1]["number"] == 1
+
+
+def test_query22():
+    user_query = "quran surahs"
+    quran_qu = QuranQU()
+    result = quran_qu.analyze(user_query)
+
+    assert result["collection"] == "quran"

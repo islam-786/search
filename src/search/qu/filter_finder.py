@@ -8,6 +8,11 @@ class FilterFinder:
         # Founded numbers intent
         filters_intent = []
 
+        # Get Pre define filters
+        for intent in self.query_intents:
+            if intent["type"] == "pre_define_filter":
+                filters_intent.append(intent)
+
         # Find intent that are comming before numbers
         for number in self.numbers:
             for intent in self.query_intents:
@@ -25,6 +30,12 @@ class FilterFinder:
             for number in self.numbers:
                 found = False
                 for intent in filters_intent:
+
+                    # Pass pre define filters
+                    if intent["type"] == "pre_define_filter":
+                        found = True
+                        break
+
                     if number["index"] == intent["number_index"]:
                         found = True
                         break

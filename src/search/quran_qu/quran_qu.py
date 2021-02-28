@@ -13,4 +13,7 @@ class QuranQU:
         query = query.replace("number", " ").replace(
             "num", " ").replace("no.", " ").replace("no", " ")
 
+        # Remove "al" from query e.g surah-al-baqarah
+        query = query.replace("-al-", " al-").replace("-ul-", " al-")
+
         return qu.analyzer(query, debug)
