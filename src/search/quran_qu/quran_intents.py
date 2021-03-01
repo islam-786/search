@@ -5,19 +5,19 @@ basic_intents = [
         "name": "quran",
         "collection": "quran",
         "type": "collection",
-        "words": ["quran"]
+        "words": ["quran", "kuran", "qoran"]
     },
     {
         "name": "surah",
         "collection": "quran",
         "type": "filter",
-        "words": ["surah", "surat"]
+        "words": ["surah", "surat", "surahs"]
     },
     {
         "name": "ayah",
         "collection": "quran",
         "type": "filter",
-        "words": ["ayah", "ayat"]
+        "words": ["ayah", "ayat", "ayahs"]
     }
 ]
 
