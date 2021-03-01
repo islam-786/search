@@ -21,7 +21,12 @@ class IntentFinder:
 
         # Those tokens which intents are not found
         left_tokens = []
-        for index, token in enumerate(self.tokens):
+
+        # remove stop words from token
+        stop_words = ["from", "of", "in", "the", "to", "start", "end"]
+        cleaned_tokens = [t for t in self.tokens if t not in stop_words]
+
+        for index, token in enumerate(cleaned_tokens):
             found = False
             for intent in query_intents:
                 if token == intent["value"]:

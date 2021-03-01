@@ -1,3 +1,5 @@
+from .surah_intents import surahs_intent
+
 basic_intents = [
     {
         "name": "quran",
@@ -18,16 +20,5 @@ basic_intents = [
         "words": ["ayah", "ayat"]
     }
 ]
-
-surahs_intent = [
-    {
-        "name": "surah",
-        "collection": "quran",
-        "type": "pre_define_filter",
-        "number": 2,
-        "words": ["al-baqarah", "baqarah", "baqara"]
-    }
-]
-
 
 quran_intents = basic_intents + surahs_intent
