@@ -1,10 +1,12 @@
 from textdistance import levenshtein
+from .stop_words import stop_words
 
 
 class IntentFinder:
     def __init__(self, tokens, intent_list):
         self.tokens = tokens
         self.intent_list = intent_list
+        self.score = 0
 
     def intents(self):
         # Founded intent in query
@@ -18,6 +20,8 @@ class IntentFinder:
                     query_intent["value"] = token
                     query_intent["index"] = index
                     query_intents.append(query_intent)
+                    # Calculate confidence
+                    self.score += 5
 
         # Those tokens which intents are not found
         left_tokens = []
@@ -39,8 +43,6 @@ class IntentFinder:
         # remove stop words from left tokens
         cleaned_tokens = []
         if left_tokens:
-            stop_words = ["from", "of", "in", "on",
-                          "the", "to", "start", "starting", "last", "end", "ending"]
             cleaned_tokens = [
                 t for t in left_tokens if t["word"] not in stop_words]
 
@@ -65,5 +67,8 @@ class IntentFinder:
                 i["value"] = token["word"]
                 i["index"] = token["index"]
                 query_intents.append(i)
+
+                # Calculate confidence
+                self.score += 5 - (min_distance_intent["distance"] + 1)
 
         return query_intents

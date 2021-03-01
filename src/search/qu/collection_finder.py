@@ -3,6 +3,7 @@ class CollectionFinder:
         self.tokens = tokens
         self.intents = intents
         self.filters_intent = filters_intent
+        self.score = 0
 
     def collection(self):
         query_collection = None
@@ -14,6 +15,8 @@ class CollectionFinder:
         # if collection is None then find collection from filters
         if collection is not None:
             query_collection = collection
+            # Calculate confidence
+            self.score += 100
         else:
             # Filter collections based on frequency
             filter_collections = {}
@@ -30,6 +33,8 @@ class CollectionFinder:
             try:
                 query_collection = max(
                     filter_collections, key=filter_collections.get)
+                # Calculate confidence
+                self.score += 10
             except ValueError:
                 query_collection = None
 
@@ -40,5 +45,7 @@ class CollectionFinder:
             if len(self.tokens) == 1:
                 if ":" in self.tokens[0] or "-" in self.tokens[0]:
                     query_collection = "quran"
+                    # Calculate confidence
+                    self.score += 10
 
         return query_collection

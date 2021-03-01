@@ -8,7 +8,7 @@ from .collection_finder import CollectionFinder
 
 
 class QU:
-    def __init__(self, query_intents, remove_filters=[]):
+    def __init__(self, query_intents, caller, remove_filters=[]):
         """Initialize the QU
 
         query_intents: Provide query intents
@@ -17,8 +17,10 @@ class QU:
         """
         self.query_intents = query_intents
         self.remove_filters = remove_filters
+        self.caller = caller
 
     def analyzer(self, query, debug=False):
+        scores = 0
         # formated query
         formated_query = {"_debug": {}}
 
@@ -30,12 +32,16 @@ class QU:
         intent_finder = IntentFinder(tokens, self.query_intents)
         intents = intent_finder.intents()
 
+        scores += intent_finder.score
+
         # Find query numbers
         number_finder = NumberFinder(tokens)
         numbers = number_finder.numbers()
 
+        scores += number_finder.score
+
         # Find filter intents
-        filter_finder = FilterFinder(tokens, numbers, intents)
+        filter_finder = FilterFinder(tokens, numbers, intents, self.caller)
         filters_intent = filter_finder.intents()
 
         if debug:
@@ -44,6 +50,8 @@ class QU:
         # Find limit
         limit_finder = LimitFinder(tokens, filters_intent)
         limit_intent = limit_finder.intent()
+
+        scores += limit_finder.score
 
         # if limit intent found than remove this intent from filters intent
         if limit_intent:
@@ -62,6 +70,8 @@ class QU:
         range_finder = RangeFinder(tokens)
         query_range = range_finder.query_range()
 
+        scores += range_finder.score
+
         # if Query Range found than remove the ayah intent from filters
         if query_range and self.remove_filters:
             filters_intent = [
@@ -73,10 +83,15 @@ class QU:
         # Find filters
         filters = filter_finder.filters(filters_intent)
 
+        scores += filter_finder.score
+
         # Find query collection
         collection_finder = CollectionFinder(tokens, intents, filters_intent)
         collection = collection_finder.collection()
 
+        scores += collection_finder.score
+
+        formated_query["confidence"] = scores
         formated_query["collection"] = collection
         formated_query["filters"] = filters
 

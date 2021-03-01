@@ -4,6 +4,7 @@ from .alpha_numbers import numeric_words, alpha_numbers
 class RangeFinder:
     def __init__(self, tokens):
         self.tokens = tokens
+        self.score = 0
 
     def query_range(self):
         # Find range format
@@ -30,6 +31,8 @@ class RangeFinder:
                 if next_token.isnumeric() or next_token in numeric_words:
                     try:
                         range_format["from"] = int(next_token)
+                        # Calculate confindec
+                        self.score += 5
                     except ValueError:
                         range_format["from"] = next(
                             a["number"] for a in alpha_numbers if a["alpha"] == next_token)
@@ -50,9 +53,13 @@ class RangeFinder:
                 if next_token.isnumeric() or next_token in numeric_words:
                     try:
                         range_format["to"] = int(next_token)
+                        # Calculate confindec
+                        self.score += 50
                     except ValueError:
                         range_format["to"] = next(
                             a["number"] for a in alpha_numbers if a["alpha"] == next_token)
+                        # Calculate confindec
+                        self.score += 50
         except:
             pass
 

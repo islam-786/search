@@ -1,8 +1,10 @@
 class FilterFinder:
-    def __init__(self, tokens, numbers, query_intents):
+    def __init__(self, tokens, numbers, query_intents, caller):
         self.tokens = tokens
         self.numbers = numbers
         self.query_intents = query_intents
+        self.caller = caller
+        self.score = 0
 
     def intents(self):
         # Founded numbers intent
@@ -12,6 +14,8 @@ class FilterFinder:
         for intent in self.query_intents:
             if intent["type"] == "pre_define_filter":
                 filters_intent.append(intent)
+                # Calculate confident
+                self.score += 80
 
         # Find intent that are comming before numbers
         for number in self.numbers:
@@ -21,6 +25,8 @@ class FilterFinder:
                     filter_intent["number"] = number["number"]
                     filter_intent["number_index"] = number["index"]
                     filters_intent.append(filter_intent)
+                    # Calculate confident
+                    self.score += 70
                     break
 
         # if filters intent and number length is not same this
@@ -51,6 +57,8 @@ class FilterFinder:
                         filter_intent["number"] = number["number"]
                         filter_intent["number_index"] = number["index"]
                         filters_intent.append(filter_intent)
+                        # Calculate confident
+                        self.score += 70
                         break
 
         return filters_intent
@@ -61,7 +69,7 @@ class FilterFinder:
                    for filter_intent in filters_intent]
 
         # If filters None then check if any token contain (:) or (-)
-        if not filters:
+        if not filters and self.caller == "quran":
             for token in self.tokens:
                 seperator = None
 
@@ -84,6 +92,9 @@ class FilterFinder:
                                 "number": int(parts[1])
                             }
                         ]
+
+                        # Calculate confident
+                        self.score += 100
                     except ValueError:
                         pass
 

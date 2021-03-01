@@ -4,7 +4,7 @@ from .hadith_intents import hadith_intents
 
 class HadithQU:
     def analyze(self, query, debug=False):
-        qu = QU(hadith_intents)
+        qu = QU(hadith_intents, "hadith")
 
         # Replace # symbol with space
         query = query.replace("#", " ")

@@ -4,7 +4,7 @@ from .quran_intents import quran_intents
 
 class QuranQU:
     def analyze(self, query, debug=False):
-        qu = QU(quran_intents, ["ayah"])
+        qu = QU(quran_intents, "quran", ["ayah"])
 
         # Replace # symbol with space
         query = query.replace("#", " ")
