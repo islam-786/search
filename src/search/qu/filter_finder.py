@@ -53,7 +53,6 @@ class FilterFinder:
                         filters_intent.append(filter_intent)
                         break
 
-        self.filters_intent = filters_intent
         return filters_intent
 
     def filters(self, filters_intent):

@@ -22,11 +22,7 @@ class IntentFinder:
         # Those tokens which intents are not found
         left_tokens = []
 
-        # remove stop words from token
-        stop_words = ["from", "of", "in", "the", "to", "start", "end"]
-        cleaned_tokens = [t for t in self.tokens if t not in stop_words]
-
-        for index, token in enumerate(cleaned_tokens):
+        for index, token in enumerate(self.tokens):
             found = False
             for intent in query_intents:
                 if token == intent["value"]:
@@ -40,10 +36,18 @@ class IntentFinder:
                 }
                 left_tokens.append(t)
 
+        # remove stop words from left tokens
+        cleaned_tokens = []
+        if left_tokens:
+            stop_words = ["from", "of", "in", "on",
+                          "the", "to", "start", "starting", "last", "end", "ending"]
+            cleaned_tokens = [
+                t for t in left_tokens if t["word"] not in stop_words]
+
         # If there are some tokens left then
         # find those intents which are levenshtein distance
         # is less than 3
-        for token in left_tokens:
+        for token in cleaned_tokens:
             intents = []
             for intent in self.intent_list:
                 for word in intent["words"]:
