@@ -1,3 +1,7 @@
+hadith_names = ["bukhari", "muslim", "tirmidhi",
+                "abu_dawud", "nasai", "ibne_maja"]
+
+
 class FilterFinder:
     def __init__(self, tokens, numbers, query_intents, caller):
         self.tokens = tokens
@@ -67,6 +71,19 @@ class FilterFinder:
 
         filters = [{"name": filter_intent["name"], "number": filter_intent["number"]}
                    for filter_intent in filters_intent]
+
+        # if caller is Hadith and there is any filter name is "bukhari" or something
+        # then replace it with hadith_number e.g bukhari 123
+        if self.caller == "hadith":
+            new_filters = []
+            for f in filters:
+                if f["name"] in hadith_names:
+                    new_filter = f.copy()
+                    new_filter["name"] = "hadith_number"
+                    new_filters.append(new_filter)
+
+            if new_filters:
+                filters = new_filters
 
         # If filters None then check if any token contain (:) or (-)
         if not filters and self.caller == "quran":
