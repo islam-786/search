@@ -29,7 +29,7 @@ def test_query1():
     quran_qu = QuranQU()
     result = quran_qu.analyze(user_query)
 
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["collection"] == "quran"
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
@@ -42,7 +42,7 @@ def test_query2():
     quran_qu = QuranQU()
     result = quran_qu.analyze(user_query)
 
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["collection"] == "quran"
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
@@ -56,7 +56,7 @@ def test_query3():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -69,7 +69,7 @@ def test_query4():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -84,7 +84,7 @@ def test_query5():
     print(result)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "ayah"
     assert result["filters"][0]["number"] == 1
     assert result["filters"][1]["name"] == "surah"
@@ -97,7 +97,7 @@ def test_query6():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -110,7 +110,7 @@ def test_query7():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -123,7 +123,7 @@ def test_query8():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -136,7 +136,7 @@ def test_query9():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -149,7 +149,7 @@ def test_query10():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -162,7 +162,7 @@ def test_query11():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -175,7 +175,7 @@ def test_query12():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -188,7 +188,7 @@ def test_query13():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -201,7 +201,7 @@ def test_query14():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -214,7 +214,7 @@ def test_query15():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -227,7 +227,7 @@ def test_query16():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "ayah"
     assert result["filters"][0]["number"] == 1
     assert result["filters"][1]["name"] == "surah"
@@ -240,7 +240,7 @@ def test_query17():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "ayah"
     assert result["filters"][0]["number"] == 1
     assert result["filters"][1]["name"] == "surah"
@@ -253,7 +253,7 @@ def test_query18():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -266,7 +266,7 @@ def test_query19():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -279,7 +279,7 @@ def test_query20():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -292,7 +292,7 @@ def test_query21():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result["filters"][0]["name"] == "surah"
     assert result["filters"][0]["number"] == 2
     assert result["filters"][1]["name"] == "ayah"
@@ -305,4 +305,4 @@ def test_query22():
     result = quran_qu.analyze(user_query)
 
     assert result["collection"] == "quran"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100

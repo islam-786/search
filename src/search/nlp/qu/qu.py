@@ -91,7 +91,7 @@ class QU:
 
         scores += collection_finder.score
 
-        formated_query["confidence"] = scores
+        formated_query["score"] = scores
         formated_query["collection"] = collection
         formated_query["filters"] = filters
 

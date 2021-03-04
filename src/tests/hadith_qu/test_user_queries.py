@@ -15,7 +15,7 @@ def test_query1():
     result = hadith_qu.analyze("sahih bukhari hadith 1")
 
     assert result['collection'] == "bukhari"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result['filters'][0]["name"] == "hadith_number"
     assert result['filters'][0]["number"] == 1
 
@@ -25,7 +25,7 @@ def test_query2():
     result = hadith_qu.analyze("sahih bukhari hadees 1")
 
     assert result['collection'] == "bukhari"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result['filters'][0]["name"] == "hadith_number"
     assert result['filters'][0]["number"] == 1
 
@@ -35,7 +35,7 @@ def test_query3():
     result = hadith_qu.analyze("sahih bukhari hadees number 1")
 
     assert result['collection'] == "bukhari"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result['filters'][0]["name"] == "hadith_number"
     assert result['filters'][0]["number"] == 1
 
@@ -45,7 +45,7 @@ def test_query4():
     result = hadith_qu.analyze("sahih bukhari")
 
     assert result['collection'] == "bukhari"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert len(result['filters']) == 0
 
 
@@ -54,7 +54,7 @@ def test_query5():
     result = hadith_qu.analyze("bukhari")
 
     assert result['collection'] == "bukhari"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert len(result['filters']) == 0
 
 
@@ -63,6 +63,6 @@ def test_query6():
     result = hadith_qu.analyze("hadith number 1")
 
     assert result['collection'] == "bukhari"
-    assert result["confidence"] >= 100
+    assert result["score"] >= 100
     assert result['filters'][0]["name"] == "hadith_number"
     assert result['filters'][0]["number"] == 1

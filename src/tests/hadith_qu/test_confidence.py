@@ -53,7 +53,7 @@ def test_quran_wining_queries():
         hadith_qu = HadithQU()
         h = hadith_qu.analyze(query)
 
-        assert q["confidence"] > h["confidence"]
+        assert q["score"] > h["score"]
 
 
 def test_hadith_wining_queries():
@@ -73,4 +73,4 @@ def test_hadith_wining_queries():
         hadith_qu = HadithQU()
         h = hadith_qu.analyze(query)
 
-        assert h["confidence"] > q["confidence"]
+        assert h["score"] > q["score"]
