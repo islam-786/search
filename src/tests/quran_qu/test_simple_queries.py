@@ -1,5 +1,5 @@
 import pytest
-from search.quran_qu import QuranQU
+from search.nlp.quran_qu import QuranQU
 
 # Queries
 #

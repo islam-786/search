@@ -1,4 +1,4 @@
-from search.hadith_qu import HadithQU
+from search.nlp.hadith_qu import HadithQU
 
 # Queries
 #

@@ -1,5 +1,5 @@
-from search.quran_qu import QuranQU
-from search.hadith_qu import HadithQU
+from search.nlp.quran_qu import QuranQU
+from search.nlp.hadith_qu import HadithQU
 
 
 def test_quran_wining_queries():

@@ -1,10 +1,10 @@
-from search.qu import QU
-from .hadith_intents import hadith_intents
+from search.nlp.qu import QU
+from .quran_intents import quran_intents
 
 
-class HadithQU:
+class QuranQU:
     def analyze(self, query, debug=False):
-        qu = QU(hadith_intents, "hadith")
+        qu = QU(quran_intents, "quran", ["ayah"])
 
         # Replace # symbol with space
         query = query.replace("#", " ")
@@ -13,8 +13,7 @@ class HadithQU:
         query = query.replace("number", " ").replace(
             "num", " ").replace("no.", " ").replace("no", " ")
 
-        # Remove hadith prefix
-        query = query.replace("-", " ").replace("sahih",
-                                                " ").replace("sunan", " ")
+        # Remove "al" from query e.g surah-al-baqarah
+        query = query.replace("-al-", " al-").replace("-ul-", " al-")
 
         return qu.analyzer(query, debug)
