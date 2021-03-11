@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 textdistance = "*"
+fireo = "*"
+requests = "*"
 
 [dev-packages]
 pytest = "*"

@@ -93,7 +93,9 @@ class QU:
 
         formated_query["score"] = scores
         formated_query["collection"] = collection
-        formated_query["filters"] = filters
+
+        if len(filters) > 0:
+            formated_query["filters"] = filters
 
         if limit_intent:
             formated_query["limit"] = {
