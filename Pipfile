@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 textdistance = "*"
 requests = "*"
+flask-restplus = "*"
+werkzeug = "==0.16.1"
 
 [dev-packages]
 pytest = "*"
