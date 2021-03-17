@@ -46,7 +46,7 @@ def test_query4():
 
     assert result['collection'] == "bukhari"
     assert result["score"] >= 100
-    assert len(result['filters']) == 0
+    assert "filters" not in result
 
 
 def test_query5():
@@ -55,7 +55,7 @@ def test_query5():
 
     assert result['collection'] == "bukhari"
     assert result["score"] >= 100
-    assert len(result['filters']) == 0
+    assert "filters" not in result
 
 
 def test_query6():
