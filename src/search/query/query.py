@@ -26,11 +26,14 @@ class Query:
 
         r["nlp"]["url"] = url
         r["type"] = response_type
-        #r["data"] = self._api_response(url)
+        r["data"] = self._api_response(url)
 
         return r
 
     def _api_response(self, url):
+        if url is None:
+            return None
+
         r = requests.get(url)
         return r.json()
 
@@ -50,6 +53,7 @@ class Query:
                 ayah_id = str(f[0]["number"]) + "-" + str(f[1]["number"])
                 url = base_url + "/ayah/" + ayah_id
             else:
+                response_type = "multi_ayah"
                 # Surah number
                 surah_number = str(f[0]["number"])
                 url = base_url + "/surah/" + surah_number
@@ -65,8 +69,17 @@ class Query:
         if "range" in nlp:
             response_type = "multi_ayah"
             range = nlp["range"]
-            url += '?offset=' + str(range["from"]) + \
-                '&maxResult=' + str(range["to"])
+
+            range_from = range["from"]
+            range_to = range["to"]
+
+            # For example surah 2 ayah from 3 to 7 it should start from
+            # 3 and get 4 ayahs
+            if range_from > 1:
+                range_to = range_to + 1 - range_from
+
+            url += '?offset=' + str(range_from) + \
+                '&maxResult=' + str(range_to)
 
         # Get Quran surahs only when there is no filter, range and limit
         if all(k not in nlp for k in ("filters", "range", "limit")):

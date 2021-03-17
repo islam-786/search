@@ -14,6 +14,7 @@ class QuranQU:
             "num", " ").replace("no.", " ").replace("no", " ")
 
         # Remove "al" from query e.g surah-al-baqarah
-        query = query.replace("-al-", " al-").replace("-ul-", " al-")
+        query = query.replace("-al-", " al-").replace("-ul-", " al-") \
+            .replace("al ", " al-")
 
         return qu.analyzer(query, debug)

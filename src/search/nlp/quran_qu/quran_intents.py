@@ -5,7 +5,7 @@ basic_intents = [
         "name": "quran",
         "collection": "quran",
         "type": "collection",
-        "words": ["quran", "kuran", "qoran"]
+        "words": ["quran", "kuran", "qoran", "surahs"]
     },
     {
         "name": "surah",
