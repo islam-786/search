@@ -38,7 +38,8 @@ class Query:
         return r.json()
 
     def _quran_api_url(self, nlp):
-        base_url = "http://localhost:5001/v1"
+        # base_url = "http://localhost:5001/v1"
+        base_url = "https://quran-api-dot-islamicnet.appspot.com/v1"
         url = None
         response_type = None
 
@@ -89,7 +90,8 @@ class Query:
         return url, response_type
 
     def _hadith_api_url(self, nlp):
-        base_url = "http://localhost:5002/v1"
+        # base_url = "http://localhost:5002/v1"
+        base_url = "https://hadith-api-dot-islamicnet.appspot.com/v1"
         url = None
         response_type = None
 
