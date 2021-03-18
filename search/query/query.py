@@ -50,8 +50,14 @@ class Query:
             # if filters len is greater than 1 than it means
             # it filter surah and ayah both otherwise only surah
             if len(f) > 1:
-                # Generate ayah id with surah and number e.g 2-1
-                ayah_id = str(f[0]["number"]) + "-" + str(f[1]["number"])
+                # check if first filter is surah or ayah
+                if f[0]["name"] == "surah":
+                    # Generate ayah id with surah and number e.g 2-1
+                    ayah_id = str(f[0]["number"]) + "-" + str(f[1]["number"])
+                else:
+                    # Generate ayah id with surah and number e.g 2-1
+                    ayah_id = str(f[1]["number"]) + "-" + str(f[0]["number"])
+
                 url = base_url + "/ayah/" + ayah_id
             else:
                 response_type = "multi_ayah"

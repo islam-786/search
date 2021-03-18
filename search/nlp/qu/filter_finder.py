@@ -14,10 +14,13 @@ class FilterFinder:
         # Founded numbers intent
         filters_intent = []
 
+        # Founded pre define filters
+        pre_define_filters = []
+
         # Get Pre define filters
         for intent in self.query_intents:
             if intent["type"] == "pre_define_filter":
-                filters_intent.append(intent)
+                pre_define_filters.append(intent)
                 # Calculate confident
                 self.score += 80
 
@@ -65,7 +68,7 @@ class FilterFinder:
                         self.score += 70
                         break
 
-        return filters_intent
+        return filters_intent + pre_define_filters
 
     def filters(self, filters_intent):
 

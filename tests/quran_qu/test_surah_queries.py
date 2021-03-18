@@ -17,10 +17,16 @@ def test_query1():
 
     assert result['collection'] == "quran"
     assert result["score"] >= 100
-    assert result['filters'][0]['name'] == "surah"
-    assert result['filters'][0]['number'] == 2
-    assert result['filters'][1]['name'] == "ayah"
-    assert result['filters'][1]['number'] == 1
+    if result['filters'][0]['name'] == "surah":
+        assert result['filters'][0]['name'] == "surah"
+        assert result['filters'][0]['number'] == 2
+        assert result['filters'][1]['name'] == "ayah"
+        assert result['filters'][1]['number'] == 1
+    else:
+        assert result['filters'][0]['name'] == "ayah"
+        assert result['filters'][0]['number'] == 1
+        assert result['filters'][1]['name'] == "surah"
+        assert result['filters'][1]['number'] == 2
 
 
 def test_query2():
@@ -30,10 +36,16 @@ def test_query2():
 
     assert result['collection'] == "quran"
     assert result["score"] >= 100
-    assert result['filters'][0]['name'] == "surah"
-    assert result['filters'][0]['number'] == 2
-    assert result['filters'][1]['name'] == "ayah"
-    assert result['filters'][1]['number'] == 1
+    if result['filters'][0]['name'] == "surah":
+        assert result['filters'][0]['name'] == "surah"
+        assert result['filters'][0]['number'] == 2
+        assert result['filters'][1]['name'] == "ayah"
+        assert result['filters'][1]['number'] == 1
+    else:
+        assert result['filters'][0]['name'] == "ayah"
+        assert result['filters'][0]['number'] == 1
+        assert result['filters'][1]['name'] == "surah"
+        assert result['filters'][1]['number'] == 2
 
 
 def test_query3():
@@ -43,10 +55,16 @@ def test_query3():
 
     assert result['collection'] == "quran"
     assert result["score"] >= 100
-    assert result['filters'][0]['name'] == "surah"
-    assert result['filters'][0]['number'] == 2
-    assert result['filters'][1]['name'] == "ayah"
-    assert result['filters'][1]['number'] == 1
+    if result['filters'][0]['name'] == "surah":
+        assert result['filters'][0]['name'] == "surah"
+        assert result['filters'][0]['number'] == 2
+        assert result['filters'][1]['name'] == "ayah"
+        assert result['filters'][1]['number'] == 1
+    else:
+        assert result['filters'][0]['name'] == "ayah"
+        assert result['filters'][0]['number'] == 1
+        assert result['filters'][1]['name'] == "surah"
+        assert result['filters'][1]['number'] == 2
 
 
 def test_query4():
@@ -56,10 +74,16 @@ def test_query4():
 
     assert result['collection'] == "quran"
     assert result["score"] >= 100
-    assert result['filters'][0]['name'] == "surah"
-    assert result['filters'][0]['number'] == 2
-    assert result['filters'][1]['name'] == "ayah"
-    assert result['filters'][1]['number'] == 1
+    if result['filters'][0]['name'] == "surah":
+        assert result['filters'][0]['name'] == "surah"
+        assert result['filters'][0]['number'] == 2
+        assert result['filters'][1]['name'] == "ayah"
+        assert result['filters'][1]['number'] == 1
+    else:
+        assert result['filters'][0]['name'] == "ayah"
+        assert result['filters'][0]['number'] == 1
+        assert result['filters'][1]['name'] == "surah"
+        assert result['filters'][1]['number'] == 2
 
 
 def test_query5():
@@ -69,10 +93,16 @@ def test_query5():
 
     assert result['collection'] == "quran"
     assert result["score"] >= 100
-    assert result['filters'][0]['name'] == "surah"
-    assert result['filters'][0]['number'] == 2
-    assert result['filters'][1]['name'] == "ayah"
-    assert result['filters'][1]['number'] == 1
+    if result['filters'][0]['name'] == "surah":
+        assert result['filters'][0]['name'] == "surah"
+        assert result['filters'][0]['number'] == 2
+        assert result['filters'][1]['name'] == "ayah"
+        assert result['filters'][1]['number'] == 1
+    else:
+        assert result['filters'][0]['name'] == "ayah"
+        assert result['filters'][0]['number'] == 1
+        assert result['filters'][1]['name'] == "surah"
+        assert result['filters'][1]['number'] == 2
 
 
 def test_query6():

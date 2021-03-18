@@ -1,3 +1,4 @@
+from textdistance import levenshtein
 from .alpha_numbers import numeric_words
 
 
@@ -14,9 +15,9 @@ class LimitFinder:
         # if there is "first" word before or after number
         for index, token in enumerate(self.tokens):
             if (token == "first" and
-                (self.tokens[index + 1].isnumeric() or
+                        (self.tokens[index + 1].isnumeric() or
                          self.tokens[index + 1] in numeric_words)
-                ):
+                    ):
                 # This is the limit e.g first 5 ayahs
                 limit_index = index + 1
                 direction = "start"
@@ -44,5 +45,37 @@ class LimitFinder:
                 limit_intent["direction"] = direction
 
             return limit_intent
+
+        # Special case only to get last ayah of surah
+        # e.g surah 2 last ayah
+        for index, token in enumerate(self.tokens):
+            if token == "last":
+                special_limit_intent = {
+                    "name": "ayah",
+                    "collection": "quran",
+                    "type": "special-limit-for-last-ayah",
+                    "value": "ayah",
+                    "number": 1,
+                    "direction": "end",
+                    "index": -1,
+                    "number_index": -1
+                }
+
+                next_token = self.tokens[index + 1]
+                words = ["ayah", "ayat", "ayahs"]
+
+                # Check if next token is in these words
+                if next_token in words:
+                    # calculate confidence
+                    self.score += 30
+                    return special_limit_intent
+
+                # if next token is not in these words then check it with distance
+                for word in words:
+                    d = levenshtein.distance(next_token, word)
+                    if d < 2:
+                        # calculate confidence
+                        self.score += 20
+                        return special_limit_intent
 
         return None
