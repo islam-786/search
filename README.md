@@ -7,3 +7,7 @@ Islamic Content Search API in python
 1. `cd firebase`
 2. `firebase emulators:start --only firestore --import=./cache`
 3. `export FIRESTORE_EMULATOR_HOST="localhost:8080"`
+
+### Run Tests
+
+`python -m pytest tests/`
