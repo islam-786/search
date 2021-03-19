@@ -315,7 +315,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "22",
+        "number": 22,
         "words": [
             "al-hajj",
             "al-haj",
@@ -333,7 +333,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "23",
+        "number": 23,
         "words": [
             "al-muminun",
             "al-momenon",
@@ -359,7 +359,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "24",
+        "number": 24,
         "words": [
             "an-nur",
             "an-noor",
@@ -376,7 +376,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "25",
+        "number": 25,
         "words": [
             "al-furqan",
             "al-forqan",
@@ -390,7 +390,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "26",
+        "number": 26,
         "words": [
             "al-ashshuara",
             "al-ashura",
@@ -410,7 +410,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "27",
+        "number": 27,
         "words": [
             "an-naml",
             "an-namal",
@@ -426,7 +426,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "28",
+        "number": 28,
         "words": [
             "al-qasas",
             "al-kasas"
@@ -442,7 +442,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "29",
+        "number": 29,
         "words": [
             "al-ankabut",
             "al-ankabot",
@@ -456,7 +456,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "30",
+        "number": 30,
         "words": [
             "al-arrum",
             "al-aroom",
@@ -472,7 +472,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "31",
+        "number": 31,
         "words": [
             "al-luqmaan",
             "al-luqman",
@@ -494,7 +494,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "32",
+        "number": 32,
         "words": [
             "as-sajda",
             "as-sajada",
@@ -508,7 +508,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "33",
+        "number": 33,
         "words": [
             "al-ahzaab",
             "al-ahzab",
@@ -520,7 +520,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "34",
+        "number": 34,
         "words": [
             "al-saba",
             "al-asaba",
@@ -532,7 +532,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "35",
+        "number": 35,
         "words": [
             "al-faatir",
             "al-fatir",
@@ -548,7 +548,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "36",
+        "number": 36,
         "words": [
             "al-yaseen",
             "al-yasen",
@@ -560,7 +560,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "37",
+        "number": 37,
         "words": [
             "al-assaaffaat",
             "al-assafat",
@@ -574,7 +574,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "38",
+        "number": 38,
         "words": [
             "al-saad",
             "al-soad",
@@ -586,7 +586,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "39",
+        "number": 39,
         "words": [
             "al-azzumar",
             "al-azumar",
@@ -610,7 +610,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "40",
+        "number": 40,
         "words": [
             "al-ghafir",
             "al-gafir",
@@ -626,7 +626,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "41",
+        "number": 41,
         "words": [
             "al-fussilat",
             "al-fusilat",
@@ -644,7 +644,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "42",
+        "number": 42,
         "words": [
             "al-ashshooraa",
             "al-ashora",
@@ -658,7 +658,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "43",
+        "number": 43,
         "words": [
             "al-azzukhruf",
             "al-azukhruf",
@@ -678,7 +678,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "44",
+        "number": 44,
         "words": [
             "al-addukhaan",
             "al-adukhaan",
@@ -698,7 +698,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "45",
+        "number": 45,
         "words": [
             "al-jaathiyah",
             "al-jatiha",
@@ -714,7 +714,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "46",
+        "number": 46,
         "words": [
             "al-ahqaaf",
             "al-ahqaf",
@@ -730,7 +730,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "47",
+        "number": 47,
         "words": [
             "al-muhammad",
             "al-muhamad",
@@ -746,7 +746,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "48",
+        "number": 48,
         "words": [
             "al-fath",
             "fath"
@@ -756,7 +756,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "49",
+        "number": 49,
         "words": [
             "al-hujuraat",
             "al-hujurat",
@@ -772,7 +772,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "50",
+        "number": 50,
         "words": [
             "al-qaaf",
             "al-qaf",
@@ -784,7 +784,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "51",
+        "number": 51,
         "words": [
             "al-adhdhaariyaat"
             "al-adhdhariyat",
@@ -804,7 +804,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "52",
+        "number": 52,
         "words": [
             "al-attoor",
             "al-attor",
@@ -824,7 +824,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "53",
+        "number": 53,
         "words": [
             "al-annajm",
             "al-anajm",
@@ -842,7 +842,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "54",
+        "number": 54,
         "words": [
             "al-qamar",
             "qamar"
@@ -852,7 +852,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "55",
+        "number": 55,
         "words": [
             "ar-rahman",
             "al-arrahman",
@@ -868,7 +868,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "56",
+        "number": 56,
         "words": [
             "al-waqia",
             "al-wakia",
@@ -884,7 +884,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "57",
+        "number": 57,
         "words": [
             "al-hadeed",
             "al-haded",
@@ -896,7 +896,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "58",
+        "number": 58,
         "words": [
             "al-mujadila",
             "al-mojadila",
@@ -912,7 +912,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "59",
+        "number": 59,
         "words": [
             "al-hashr",
             "al-hashar",
@@ -924,7 +924,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "60",
+        "number": 60,
         "words": [
             "al-mumtahanah",
             "al-momtahanah",
@@ -942,7 +942,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "61",
+        "number": 61,
         "words": [
             "as-saff",
             "al-assaff",
@@ -962,7 +962,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "62",
+        "number": 62,
         "words": [
             "al-jumuah",
             "al-jumha",
@@ -976,7 +976,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "63",
+        "number": 63,
         "words": [
             "al-munafiqoon",
             "al-munafiqon",
@@ -1000,7 +1000,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "64",
+        "number": 64,
         "words": [
             "at-taghabun",
             "al-attaghabun",
@@ -1026,7 +1026,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "65",
+        "number": 65,
         "words": [
             "at-talaq",
             "at-talak",
@@ -1046,7 +1046,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "66",
+        "number": 66,
         "words": [
             "at-tahreem",
             "at-tahrem",
@@ -1072,7 +1072,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "67",
+        "number": 67,
         "words": [
             "al-mulk",
             "al-molak",
@@ -1086,7 +1086,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "68",
+        "number": 68,
         "words": [
             "al-qalam",
             "al-kalam",
@@ -1098,7 +1098,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "69",
+        "number": 69,
         "words": [
             "al-haaqqa",
             "al-haqqa",
@@ -1114,7 +1114,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "70",
+        "number": 70,
         "words": [
             "al-maarij",
             "al-marij",
@@ -1132,7 +1132,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "71",
+        "number": 71,
         "words": [
             "al-nooh",
             "al-noah",
@@ -1144,7 +1144,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "72",
+        "number": 72,
         "words": [
             "al-jinn",
             "al-jin",
@@ -1156,7 +1156,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "73",
+        "number": 73,
         "words": [
             "al-muzzammil",
             "al-muzzamil",
@@ -1174,7 +1174,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "74",
+        "number": 74,
         "words": [
             "al-muddaththir",
             "al-mudaththir",
@@ -1192,7 +1192,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "75",
+        "number": 75,
         "words": [
             "al-qiyamah",
             "al-qiyamh",
@@ -1208,7 +1208,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "76",
+        "number": 76,
         "words": [
             "al-insaan",
             "al-insan",
@@ -1222,7 +1222,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "77",
+        "number": 77,
         "words": [
             "al-mursalaat",
             "al-mursalat",
@@ -1234,7 +1234,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "78",
+        "number": 78,
         "words": [
             "an-naba",
             "al-annaba",
@@ -1248,7 +1248,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "79",
+        "number": 79,
         "words": [
             "an-naaziaat",
             "an-naaziat",
@@ -1276,7 +1276,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "80",
+        "number": 80,
         "words": [
             "al-abasa",
             "abasa"
@@ -1286,7 +1286,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "81",
+        "number": 81,
         "words": [
             "at-takweer",
             "at-takwer",
@@ -1309,7 +1309,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "82",
+        "number": 82,
         "words": [
             "al-infitar",
             "al-infetar",
@@ -1321,7 +1321,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "83",
+        "number": 83,
         "words": [
             "al-mutaffifeen",
             "al-mutaffifen",
@@ -1341,7 +1341,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "84",
+        "number": 84,
         "words": [
             "al-inshiqaaq",
             "al-inshiqaq",
@@ -1355,7 +1355,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "85",
+        "number": 85,
         "words": [
             "al-burooj",
             "al-buroj",
@@ -1375,7 +1375,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "86",
+        "number": 86,
         "words": [
             "at-taariq",
             "at-tariq",
@@ -1389,7 +1389,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "87",
+        "number": 87,
         "words": [
             "al-alaa",
             "al-ala",
@@ -1401,7 +1401,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "88",
+        "number": 88,
         "words": [
             "al-ghaashiyah",
             "al-ghashiyah",
@@ -1415,7 +1415,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "89",
+        "number": 89,
         "words": [
             "al-fajr",
             "al-fajar",
@@ -1427,7 +1427,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "90",
+        "number": 90,
         "words": [
             "al-balad",
             "balad"
@@ -1437,7 +1437,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "91",
+        "number": 91,
         "words": [
             "ash-shams",
             "al-ashshams",
@@ -1456,7 +1456,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "92",
+        "number": 92,
         "words": [
             "al-layl",
             "al-layal",
@@ -1468,7 +1468,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "93",
+        "number": 93,
         "words": [
             "ad-dhuha",
             "al-addhuha",
@@ -1486,7 +1486,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "94",
+        "number": 94,
         "words": [
             "ash-sharh",
             "al-ashrah",
@@ -1502,7 +1502,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "95",
+        "number": 95,
         "words": [
             "at-teen",
             "at-tean",
@@ -1520,7 +1520,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "96",
+        "number": 96,
         "words": [
             "al-alaq",
             "al-alak",
@@ -1532,7 +1532,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "97",
+        "number": 97,
         "words": [
             "al-qadr",
             "al-qadar",
@@ -1544,7 +1544,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "98",
+        "number": 98,
         "words": [
             "al-bayyinahh",
             "al-bayyinah",
@@ -1562,7 +1562,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "99",
+        "number": 99,
         "words": [
             "az-zalzalah",
             "al-azzalzalah",
@@ -1577,7 +1577,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "100",
+        "number": 100,
         "words": [
             "al-aadiyaat",
             "al-adiyaat",
@@ -1593,7 +1593,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "101",
+        "number": 101,
         "words": [
             "al-qaariah",
             "al-qariah",
@@ -1609,7 +1609,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "102",
+        "number": 102,
         "words": [
             "at-takaathur",
             "at-takathur",
@@ -1626,7 +1626,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "103",
+        "number": 103,
         "words": [
             "al-asr",
             "al-asar",
@@ -1638,7 +1638,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "104",
+        "number": 104,
         "words": [
             "al-humazah",
             "al-humaza",
@@ -1650,7 +1650,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "105",
+        "number": 105,
         "words": [
             "al-feel",
             "al-feal",
@@ -1662,7 +1662,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "106",
+        "number": 106,
         "words": [
             "al-quraysh",
             "al-qurash",
@@ -1676,7 +1676,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "107",
+        "number": 107,
         "words": [
             "al-maaoon",
             "al-maaon",
@@ -1694,7 +1694,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "108",
+        "number": 108,
         "words": [
             "al-kawthar",
             "al-Qawthar",
@@ -1712,7 +1712,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "109",
+        "number": 109,
         "words": [
             "al-kaafiroon",
             "al-kafiroon",
@@ -1728,7 +1728,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "110",
+        "number": 110,
         "words": [
             "an-nasr",
             "an-nasar",
@@ -1746,7 +1746,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "111",
+        "number": 111,
         "words": [
             "al-masad",
             "masad"
@@ -1756,7 +1756,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "112",
+        "number": 112,
         "words": [
             "al-ikhlaas",
             "al-ikhlas",
@@ -1768,7 +1768,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "113",
+        "number": 113,
         "words": [
             "al-falaq",
             "al-falak",
@@ -1780,7 +1780,7 @@ surahs_intent = [
         "name": "surah",
         "collection": "quran",
         "type": "pre_define_filter",
-        "number": "114",
+        "number": 114,
         "words": [
             "al-naas",
             "al-nas",
