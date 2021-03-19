@@ -47,9 +47,22 @@ class Query:
             response_type = "single_ayah"
             f = nlp["filters"]
 
+            # Check if filters length is more than two then this is
+            # not good NLP
+            if len(f) > 2:
+                return None, None
+
             # if filters len is greater than 1 than it means
             # it filter surah and ayah both otherwise only surah
             if len(f) > 1:
+
+                # Check if both names are surah or ayah then this is
+                # not good NLP
+                if f[0]["name"] == "surah" and f[1]["name"] == "surah":
+                    return None, None
+                if f[0]["name"] == "ayah" and f[1]["name"] == "ayah":
+                    return None, None
+
                 # check if first filter is surah or ayah
                 if f[0]["name"] == "surah":
                     # Generate ayah id with surah and number e.g 2-1
