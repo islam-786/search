@@ -47,14 +47,23 @@ class IntentFinder:
                 t for t in left_tokens if t["word"] not in stop_words]
 
         # If there are some tokens left then
-        # find those intents which are levenshtein distance
-        # is less than 3
+        # find those intents which are based on levenshtein distance
         for token in cleaned_tokens:
             intents = []
             for intent in self.intent_list:
                 for word in intent["words"]:
+                    if len(word) <= 3:
+                        continue
+
+                    max_distance = 1
+
+                    if len(word) <= 5:
+                        max_distance = 1
+                    else:
+                        max_distance = 2
+
                     d = levenshtein.distance(token["word"], word)
-                    if d < 3:
+                    if d <= max_distance:
                         i = {}
                         i["intent"] = intent.copy()
                         i["distance"] = d
