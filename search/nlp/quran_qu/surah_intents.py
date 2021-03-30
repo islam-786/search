@@ -122,7 +122,7 @@ surahs_intent = [
             "tooba",
             "towba",
             "taobha",
-            "toaba"
+            "toaba",
             "attawbah",
             "attooba",
             "attowba",
